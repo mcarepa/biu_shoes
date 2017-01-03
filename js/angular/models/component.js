@@ -1,5 +1,3 @@
-'use strict';
-
 var Component = function () {
   function Component(name, perspectives, actualColor, availableColors) {
     this.name = name;

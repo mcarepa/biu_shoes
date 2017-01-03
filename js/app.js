@@ -1,5 +1,3 @@
-'use strict';
-
 var appModule = angular.module('ShoeCustomizer', []);
 
 var MainController = function($scope, $rootScope, Shoe) {
