@@ -1,0 +1,16 @@
+<div class="svg-object {{component.name}}"
+  style="top: {{coords.x}};
+         left: {{coords.y}};
+         color: {{component.actualColor}};
+         width: {{width}};
+         z-index: {{zIndex}};"
+  data-name="{{component.name}}">
+
+  <div class="svg-parent">
+    <object
+      type="image/svg+xml"
+      data="{{svgPath}}"
+      id="{{elmId}}">
+    </object>
+  </div>
+</div>

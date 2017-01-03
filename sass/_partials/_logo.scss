@@ -1,0 +1,20 @@
+.logo {
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.25s ease-out;
+  width: 202px;
+  z-index: 10;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+ body:not(.fp-viewing-landingPage) {
+  .logo {
+    width: 120px;
+  }
+}

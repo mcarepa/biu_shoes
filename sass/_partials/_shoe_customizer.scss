@@ -1,0 +1,226 @@
+$gallery-height: 400px;
+$gallery-width: 660px;
+$perspectives-nav-width: 120px;
+$circular-nav-width: 180px;
+$margin-size: calc(100% - (#{$perspectives-nav-width + $gallery-width + $circular-nav-width}));
+
+.shoe-customizer-color {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  text-align: center;
+  justify-content: center;
+}
+
+.shoe-wall {
+  text-align: center;
+  position: relative;
+  margin-left: calc(#{$margin-size} * 0.70);
+  margin-right: calc(#{$margin-size} * 0.3);
+  width: $gallery-width;
+}
+
+.single-shoe {
+  position: relative;
+  border: 2px solid $text-color;
+  width: $gallery-width;
+  height: $gallery-height;
+
+  .single-shoe-inner {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    img {
+      width: 540px;
+      height: 360px;
+    }
+
+    .single-shoe-perspective {
+      width: 100%;
+      height: 100%;
+
+      .view {
+        padding: 20px;
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        img {
+          top: 20px;
+          left: 20px;
+        }
+      }
+    }
+  }
+
+  .view-overlays-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -3px;
+    left: 18px;
+
+    ul {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.perspective-nav {
+  border: 2px solid $text-color;
+  text-align: center;
+  padding: 10px;
+  width: 115px;
+  height: $gallery-height;
+
+  .perspective-nav-single {
+    display: inline-block;
+    cursor: pointer;
+    width: 90px;
+    height: 75px;
+    flex: 1 0 0;
+    position: relative;
+
+    & + .perspective-nav-single {
+      margin-top: 30px;
+    }
+
+    &:hover:not(.active) img {
+      opacity: 0.7;
+    }
+
+    &.active img {
+      opacity: 1;
+    }
+
+    img {
+      left: 50%;
+      top: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      max-height: 92%;
+      opacity: 0.3;
+      transition: all 0.25s ease-out;
+    }
+  }
+}
+
+.svg-object {
+  position: absolute;
+}
+
+.svg-path {
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+    fill: #673f2b!important;
+  }
+}
+
+.comp-colors-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 42px;
+  z-index: 10;
+}
+
+.color-pallette {
+  li {
+    margin: 20px 0;
+  }
+
+  .color-square {
+    cursor: pointer;
+    display: block;
+    width: 20px;
+    height: 20px;
+
+    &:hover {
+      border: 2px solid $text-color;
+    }
+  }
+}
+
+.actions-section {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 115px;
+  border-left: 1px dashed $text-color;
+}
+
+.shoe-customizer-right-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $circular-nav-width;
+  height: $gallery-height;
+  position: relative;
+}
+
+.circular-nav {
+  background-color: rgba(255,255,255,0.5);
+  overflow: hidden;
+  border-radius: 50%;
+  position: relative;
+  width: $circular-nav-width;
+  height: $circular-nav-width;
+  transition: all .3s ease;
+
+  .circular-nav-area {
+    cursor: pointer;
+    position: absolute;
+    font-size: 1.5em;
+    width: $circular-nav-width;
+    height: $circular-nav-width;
+    transform-origin: 100% 100%;
+    overflow: hidden;
+    left: 50%;
+    top: 50%;
+    margin-top: -$circular-nav-width;
+    margin-left: -$circular-nav-width;
+    transition: border .3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+
+      &::after {
+        display: block;
+      }
+    }
+
+    &::after {
+      content: "";
+      display: none;
+      position: absolute;
+      bottom: 0;
+      left: $circular-nav-width - 35px;
+      background-color: $body-bg;
+      transform: rotate(0deg) skew(0deg)!important;
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  @for $i from 0 to 6 {
+    .circular-nav-area.circular-nav-area-#{$i + 1} {
+      transform: rotate(60deg * $i) skew(30deg);
+    }
+  }
+
+  .circular-nav-selector {
+    background-color: $body-bg;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: $circular-nav-width/2;
+    height: $circular-nav-width/2;
+    z-index: 2;
+  }
+}

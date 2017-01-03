@@ -1,0 +1,20 @@
+.btn {
+  @extend .font-serif;
+  border-radius: 1px;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  padding: 22px;
+  min-width: 186px;
+
+  &:hover {
+    cursor: pointer;
+    color: #673f2b;
+    background-image: none;
+    background-color: transparent;
+    border-color: #673f2b;
+    outline: 0;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+}

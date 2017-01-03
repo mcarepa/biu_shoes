@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html ng-app="ShoeCustomizer">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="keywords" content="html5,css3,SérgioMartins">
+  <meta name="description" content="TerezaShoes,Calcado,PT">
+  <title>Tereza Shoes</title>
+
+  <link rel="stylesheet" href="stylesheets/jquery.fullPage.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/styles.css" />
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Arapey" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+  <script type="text/javascript" src="js/jquery.svg.es5.min.js"></script>
+
+</head>
+<body onload-class>
+  <a href="#landingPage" class="logo">
+    <img class="logo-img" src="images/logo.png" alt="logo">
+  </a>
+
+  <div id="full-page" ng-controller="MainController" fullpage>
+    <!--SECTION0 - Home-->
+    <page class="landing-section" data-anchor="landingPage">
+      <h1>Your design, our passion.</h1>
+      <h3>Handmade in Portugal</h3>
+    </page>
+
+    <!--SECTION1 - Modelo-->
+    <page data-anchor="modelPage">
+      <div ng-controller="ChangeShoeModelCtrl">
+        <div class="shoe-wall">
+          <div class="single-shoe">
+            <div class="single-shoe-inner">
+              <div class="single-shoe-perspective">
+                <div class="view">
+                  <img src="{{shoeModelImgPath}}"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions-section">
+          <div class="vertical-radios-container">
+            <div ng-repeat="model in shoeModels" class="vertical-radio">
+              <input type="radio"
+                id="shoe-model-{{model.value}}"
+                name="shoe-model-{{model.value}}"
+                ng-model="selectedShoe.model"
+                ng-value="model.value"
+                ng-selected="selectedShoe.model == model.value"
+                class="vertical-radio-input">
+              <label for="shoe-model-{{model.value}}">{{model.value}}</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </page>
+
+    <!--SECTION3 - Material-->
+    <!--page data-anchor="materialPage">
+      <div ng-controller="ChangeShoeMaterialCtrl">
+        <div class="actions-section">
+          <div class="vertical-radios-container">
+            <div ng-repeat="material in shoeMaterials" class="vertical-radio">
+              <input type="radio"
+                id="shoe-material-{{material.value}}"
+                name="shoe-material-{{material.value}}"
+                ng-model="selectedShoe.material"
+                ng-value="material.value"
+                ng-selected="selectedShoe.material == material.value"
+                class="vertical-radio-input">
+              <label for="shoe-material-{{material.value}}">{{material.value}}</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </page-->
+
+    <!--SECTION4 - Cor-->
+    <page data-anchor="colorPage">
+      <div class="shoe-customizer-color" ng-controller="ChangeShoeColorCtrl">
+        <perspective-nav
+          perspectives="selectedShoe.views"
+          selected-perspective="selectedView">
+        </perspective-nav>
+
+        <div class="shoe-wall">
+          <div class="single-shoe shoe-one">
+            <div class="single-shoe-inner">
+              <perspective
+                view="selectedView"
+                all-components="selectedShoe.components"
+                selected-component = "selectedComponent"
+                class="single-shoe-perspective">
+              </perspective>
+            </div>
+          </div>
+        </div>
+
+        <div class="shoe-customizer-right-col">
+          <div class="circular-nav circular-nav-{{selectedComponent.availableColors.length}}"
+            ng-show="selectedComponent.availableColors.length > 0">
+            <div class="circular-nav-area circular-nav-area-{{$index + 1}}"
+              ng-repeat="color in selectedComponent.availableColors track by $index"
+              ng-click="updateComponentColor(color)"
+              style="background-color: {{color}};">
+            </div>
+
+            <div class="circular-nav-selector"></div>
+          </div>
+        </div>
+
+        <div class="actions-section">
+          <div class="comp-colors-nav">
+            <ul class="color-pallette">
+              <li ng-repeat="color in selectedComponent.availableColors">
+                <span class="color-square"
+                  style="background-color: {{color}};"
+                  ng-click="updateComponentColor(color)">
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </page>
+
+    <!--SECTION2 - Tamanho-->
+    <page data-anchor="sizePage" class="size-section">
+      <div ng-controller="ChangeShoeSizeCtrl">
+        <img src="images/medidor.png" alt="imgmedidor">
+        <p>Choose your size please!</p>
+
+        <div class="actions-section">
+          <div class="horizontal-radios-container">
+            <div ng-repeat="size in shoeSizes"
+              ng-class="{'active': selectedShoe.size == size}"
+              class="horizontal-radio">
+              <input type="radio"
+                id="shoe-size-{{size}}"
+                name="shoe-size"
+                ng-model="selectedShoe.size"
+                ng-value="{{size}}"
+                ng-selected="selectedShoe.size == size"
+                class="horizontal-radio-input">
+              <label for="shoe-size-{{size}}">{{size}}</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </page>
+
+    <!--SECTION5 -->
+    <page data-anchor="myShoePage">
+      <div class="final-shoe-info">
+        <p class="final-shoe-info-row">
+          <span class="final-shoe-info-label">Size:</span>
+          <span class="final-shoe-info-text">{{selectedShoe.size}}</span>
+        </p>
+        <p class="final-shoe-info-row">
+          <span class="final-shoe-info-label">Model:</span>
+          <span class="final-shoe-info-text">{{selectedShoe.model}}</span>
+        </p>
+        <p class="final-shoe-info-row">
+          <span class="final-shoe-info-label">Price:</span>
+          <span class="final-shoe-info-text">250€</span>
+        </p>
+      </div>
+
+      <button class="btn btn-primary" type="submit">Buy</button>
+    </page>
+
+    <page class="info-section">
+      <div class="info-wrapper">
+        <div class="info-social">
+          <a href="https://www.facebook.com/terezashoes/?fref=ts" target="_blank" class="icon">
+            <img src="images/social_logos/face.png"/>
+          </a>
+
+          <a href="https://www.instagram.com/tereza_shoes" target="_blank" class="icon">
+            <img src="images/social_logos/insta.png"/>
+          </a>
+        </div>
+
+        <div class="info-contacts">
+          <p class="font-serif">
+            <a href="mailto:tereza@terezashoes.com">tereza@terezashoes.com</a>
+          </p>
+          <p class="font-serif">+351 913 997 114</p>
+        </div>
+
+        <small class="font-serif">PT © 2016 tereza shoes, todos os direitos reservados</small>
+      </div>
+    </page>
+
+  </div>
+
+  <div class="sidebar-main-nav-wrapper">
+    <ul id="full-page-menu" class="sidebar-main-nav">
+      <li data-menuanchor="modelPage">
+        <a href="#modelPage" class="sidebar-main-dot">
+          <span class="sidebar-main-dot-label font-serif">Model</span>
+        </a>
+      </li>
+      <li data-menuanchor="colorPage">
+        <a href="#colorPage" class="sidebar-main-dot">
+          <span class="sidebar-main-dot-label font-serif">Style - Color</span>
+        </a>
+      </li>
+      <li data-menuanchor="sizePage">
+        <a href="#sizePage" class="sidebar-main-dot">
+          <span class="sidebar-main-dot-label font-serif">Size</span>
+        </a>
+      </li>
+      <li data-menuanchor="myShoePage">
+        <a href="#myShoePage" class="sidebar-main-dot">
+          <span class="sidebar-main-dot-label font-serif">My shoe</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <script src="js/vendors/jquery.easings.min.js"></script>
+  <script type="text/javascript" src="js/underscore-min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <!-- Angular models -->
+  <script type="text/javascript" src="js/angular/models/shoe.js"></script>
+  <script type="text/javascript" src="js/angular/models/perspective.js"></script>
+  <script type="text/javascript" src="js/angular/models/component.js"></script>
+  <script type="text/javascript" src="js/angular/models/components.js"></script>
+
+  <!-- Angular controllers -->
+  <script type="text/javascript" src="js/angular/controllers/change_shoe_material_ctrl.js"></script>
+  <script type="text/javascript" src="js/angular/controllers/change_shoe_size_ctrl.js"></script>
+  <script type="text/javascript" src="js/angular/controllers/change_shoe_model_ctrl.js"></script>
+  <script type="text/javascript" src="js/angular/controllers/change_shoe_color_ctrl.js"></script>
+
+  <!-- Angular directives -->
+  <script type="text/javascript" src="js/angular/directives/fullpage.js"></script>
+  <script type="text/javascript" src="js/angular/directives/page.js"></script>
+  <script type="text/javascript" src="js/angular/directives/perspective.js"></script>
+  <script type="text/javascript" src="js/angular/directives/perspective_nav.js"></script>
+  <script type="text/javascript" src="js/angular/directives/onload_class.js"></script>
+</body>
+</html>

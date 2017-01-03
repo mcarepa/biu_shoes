@@ -1,0 +1,8 @@
+<div class="perspective-nav">
+  <div class="perspective-nav-single"
+    ng-repeat="perspective in perspectives"
+    ng-click="changeSelectedPerspective(perspective)"
+    ng-class="{'active': selectedPerspective == perspective}">
+    <img src="{{perspective.bgPath}}" class="img-responsive"/>
+  </div>
+</div>
