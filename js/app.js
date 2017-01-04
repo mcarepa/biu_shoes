@@ -7,6 +7,7 @@ var MainController = function($scope, $rootScope, Shoe) {
   var shoe_margarida = new Shoe('margarida');
 
   var defaultAvailableColors = ['#ff1493', '#ff2e47', '#ff8026', '#fff326', '#4fdd1d', '#1dc4dd'];
+  var defaultAvailableMaterials = ['leather', 'plastic'];
 
   // 2º - Add Components to shoes
   //////////////////////////////
@@ -18,7 +19,8 @@ var MainController = function($scope, $rootScope, Shoe) {
       {name: 'front', coords: [99.8*2, 24*2+22], width: 210.6, zIndex: 2},
       {name: 'side_right', coords: [150.9*2, 35.9*2+20], width: 182.2, zIndex: 2},
     ],
-    '#ff1493', defaultAvailableColors
+    '#ff1493', defaultAvailableColors,
+    'leather', defaultAvailableMaterials
   );
 
   shoe_julia.addComponent('meio',
@@ -27,7 +29,8 @@ var MainController = function($scope, $rootScope, Shoe) {
       {name: 'front', coords: [108.5*2, 24.4*2+21], width: 159.8, zIndex: 1},
       {name: 'side_right', coords: [69.4*2, 7.2*2+20], width: 187, zIndex: 1},
     ],
-    '#ff1493', defaultAvailableColors
+    '#ff1493', defaultAvailableColors,
+    'leather', defaultAvailableMaterials
   );
 
   shoe_julia.addComponent('tira',
@@ -36,7 +39,8 @@ var MainController = function($scope, $rootScope, Shoe) {
       {name: 'front', coords: [108.5*2, 1*2+20], width: 142, zIndex: 3},
       {name: 'side_right', coords: [69*2, 7.2*2+20], width: 113.2, zIndex: 3},
     ],
-    '#ff1493', defaultAvailableColors
+    '#ff1493', defaultAvailableColors,
+    'leather', defaultAvailableMaterials
   );
 
 
@@ -48,7 +52,8 @@ var MainController = function($scope, $rootScope, Shoe) {
       {name: 'side_left', coords: [109, 51+20], width: 256.6, zIndex: 2},
       {name: 'side_right', coords: [255, 48+20], width: 254, zIndex: 2},
     ],
-    '#ff1493', defaultAvailableColors
+    '#ff1493', defaultAvailableColors,
+    'leather', defaultAvailableMaterials
   );
 
   shoe_catarina.addComponent('tira',
@@ -56,7 +61,8 @@ var MainController = function($scope, $rootScope, Shoe) {
       {name: 'side_left', coords: [291, 60+20], width: 201.6, zIndex: 3},
       {name: 'side_right', coords: [178, 51.6+20], width: 153.7, zIndex: 3},
     ],
-    '#ff1493', defaultAvailableColors
+    '#ff1493', defaultAvailableColors,
+    'leather', defaultAvailableMaterials
   );
 
   shoe_catarina.addComponent('contraforte',
@@ -64,7 +70,8 @@ var MainController = function($scope, $rootScope, Shoe) {
       {name: 'side_left', coords: [386, 6+20], width: 119, zIndex: 1},
       {name: 'side_right', coords: [90, 1+20], width: 124.7, zIndex: 1},
     ],
-    '#ff1493', defaultAvailableColors
+    '#ff1493', defaultAvailableColors,
+    'leather', defaultAvailableMaterials
   );
 
 
@@ -77,7 +84,8 @@ var MainController = function($scope, $rootScope, Shoe) {
       {name: 'front', coords: [81.3, 3.7+20], width: 335.3, zIndex: 3},
       {name: 'side_right', coords: [289.5, 17.3+20], width: 282.5, zIndex: 3},
     ],
-    '#ff2e47', defaultAvailableColors
+    '#ff2e47', defaultAvailableColors,
+    'leather', defaultAvailableMaterials
   );
 
   shoe_margarida.addComponent('tira',
@@ -86,7 +94,8 @@ var MainController = function($scope, $rootScope, Shoe) {
       {name: 'front', coords: [315, 11+20], width: 142, zIndex: 4},
       {name: 'side_right', coords: [172.2, 22+20], width: 155.5, zIndex: 4},
     ],
-    '#ff1493', defaultAvailableColors
+    '#ff1493', defaultAvailableColors,
+    'leather', defaultAvailableMaterials
   );
 
   shoe_margarida.addComponent('contraforte',
@@ -95,7 +104,8 @@ var MainController = function($scope, $rootScope, Shoe) {
       {name: 'front', coords: [335.4, 3+20], width: 180.6, zIndex: 2},
       {name: 'side_right', coords: [12, 5+20], width: 247.6, zIndex: 2},
     ],
-    '#ff1493', defaultAvailableColors
+    '#ff1493', defaultAvailableColors,
+    'leather', defaultAvailableMaterials
   );
 
   shoe_margarida.addComponent('palmilha',
@@ -104,7 +114,8 @@ var MainController = function($scope, $rootScope, Shoe) {
       {name: 'front', coords: [253.3, 105.9+20], width: 237.3, zIndex: 1},
       {name: 'side_right', coords: [119.2, 148.5+20], width: 361.4, zIndex: 1},
     ],
-    '#ff8026', defaultAvailableColors
+    '#ff8026', defaultAvailableColors,
+    'leather', defaultAvailableMaterials
   );
 
   // 3º - Add perspectives to shoes
@@ -121,8 +132,8 @@ var MainController = function($scope, $rootScope, Shoe) {
 
   // Initialize Global Variables
   $rootScope.shoes = [shoe_julia, shoe_catarina, shoe_margarida];
-  $rootScope.selectedShoe = $rootScope.shoes[0];
-}
+  $rootScope.selectedShoe = $rootScope.shoes[1];
+};
 
 appModule
   .controller('MainController', [

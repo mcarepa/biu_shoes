@@ -4,7 +4,7 @@
   left: 50%;
   transform: translateX(-50%);
   transition: all 0.25s ease-out;
-  width: 202px;
+  width: 120px;
   z-index: 10;
 
   img {
@@ -13,8 +13,8 @@
   }
 }
 
- body:not(.fp-viewing-landingPage) {
+ body.landing-page {
   .logo {
-    width: 120px;
+    width: 210px;
   }
 }

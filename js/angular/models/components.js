@@ -1,7 +1,11 @@
-var Components = function () {
-  return { components: [] };
-}
+(function(){
+  "use strict";
 
-appModule
-  .factory('Components', [Components]);
+  var Components = function () {
+    return { components: [] };
+  }
+
+  appModule
+    .factory('Components', [Components]);
+})();
 

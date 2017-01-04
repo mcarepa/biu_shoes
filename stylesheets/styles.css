@@ -1891,10 +1891,10 @@ hr {
 /* line 9, ../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_type.scss */
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: inherit;
-  font-weight: 500;
-  line-height: 1.1;
-  color: inherit;
+  font-family: "Roboto", "Lato", sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  color: white;
 }
 /* line 16, ../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_type.scss */
 h1 small,
@@ -1958,7 +1958,7 @@ h6 .small, .h6 small,
 
 /* line 47, ../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_type.scss */
 h1, .h1 {
-  font-size: 36px;
+  font-size: 50px;
 }
 
 /* line 48, ../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_type.scss */
@@ -1968,7 +1968,7 @@ h2, .h2 {
 
 /* line 49, ../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_type.scss */
 h3, .h3 {
-  font-size: 24px;
+  font-size: 25px;
 }
 
 /* line 50, ../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_type.scss */
@@ -1978,7 +1978,7 @@ h4, .h4 {
 
 /* line 51, ../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_type.scss */
 h5, .h5 {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 /* line 52, ../../../../.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_type.scss */
@@ -8970,7 +8970,7 @@ input[type="radio"]:checked + label {
           transform: translateX(-50%);
   -webkit-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out;
-  width: 202px;
+  width: 120px;
   z-index: 10;
 }
 /* line 10, ../sass/_partials/_logo.scss */
@@ -8980,8 +8980,8 @@ input[type="radio"]:checked + label {
 }
 
 /* line 17, ../sass/_partials/_logo.scss */
-body:not(.fp-viewing-landingPage) .logo {
-  width: 120px;
+body.landing-page .logo {
+  width: 210px;
 }
 
 /* line 1, ../sass/_partials/_main.scss */
@@ -8992,6 +8992,8 @@ body, html {
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
+  height: 100% !important;
+  overflow: hidden;
 }
 
 /* line 2, ../sass/_partials/_sections.scss */
@@ -9000,29 +9002,49 @@ body, html {
   text-align: center;
 }
 
-/* line 9, ../sass/_partials/_sections.scss */
+/* line 8, ../sass/_partials/_sections.scss */
 .section.landing-section {
   background-image: url("../images/cover0.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
 }
-/* line 15, ../sass/_partials/_sections.scss */
-.section.landing-section h1 {
-  margin-top: 175px;
+/* line 18, ../sass/_partials/_sections.scss */
+.section.landing-section .section-inner {
+  text-align: left;
+}
+/* line 22, ../sass/_partials/_sections.scss */
+.section.landing-section .main-text-section {
+  max-width: 700px;
+  margin: 0 auto;
+}
+/* line 27, ../sass/_partials/_sections.scss */
+.section.landing-section h1, .section.landing-section h3 {
+  text-transform: uppercase;
   opacity: 1;
 }
-/* line 20, ../sass/_partials/_sections.scss */
+/* line 32, ../sass/_partials/_sections.scss */
 .section.landing-section h3 {
-  margin-top: 30px;
-  opacity: 1;
+  color: white;
+  margin-top: 20px;
+  font-weight: 100;
 }
 
-/* line 27, ../sass/_partials/_sections.scss */
+/* line 40, ../sass/_partials/_sections.scss */
 .section.info-section .info-social {
   margin-bottom: 100px;
 }
-/* line 30, ../sass/_partials/_sections.scss */
+/* line 43, ../sass/_partials/_sections.scss */
 .section.info-section .info-social .icon {
   display: inline-block;
   margin: 0 10px;
@@ -9030,49 +9052,67 @@ body, html {
   max-height: 25px;
   text-decoration: none;
 }
-/* line 38, ../sass/_partials/_sections.scss */
+/* line 51, ../sass/_partials/_sections.scss */
 .section.info-section .info-social .icon:hover img {
   opacity: 0.6;
   -webkit-transition: opacity 0.25s ease-out;
   transition: opacity 0.25s ease-out;
 }
-/* line 44, ../sass/_partials/_sections.scss */
+/* line 57, ../sass/_partials/_sections.scss */
 .section.info-section .info-social .icon img {
   max-width: 25px;
   max-height: 25px;
   opacity: 1;
 }
-/* line 53, ../sass/_partials/_sections.scss */
+/* line 66, ../sass/_partials/_sections.scss */
 .section.info-section .info-contacts a {
   color: #b9975b;
   -webkit-transition: opacity 0.25s ease-out;
   transition: opacity 0.25s ease-out;
   opacity: 1;
 }
-/* line 58, ../sass/_partials/_sections.scss */
+/* line 71, ../sass/_partials/_sections.scss */
 .section.info-section .info-contacts a:hover {
   color: #b9975b;
   opacity: 0.6;
   text-decoration: none;
 }
-/* line 66, ../sass/_partials/_sections.scss */
+/* line 79, ../sass/_partials/_sections.scss */
 .section.info-section small {
   position: absolute;
-  bottom: 8%;
+  bottom: 20px;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   text-transform: uppercase;
 }
 
-/* line 76, ../sass/_partials/_sections.scss */
+/* line 89, ../sass/_partials/_sections.scss */
 .section.customize-section .section-inner {
   padding-top: 25px;
 }
 
-/* line 82, ../sass/_partials/_sections.scss */
+/* line 95, ../sass/_partials/_sections.scss */
 .section.size-section p {
   margin-top: 40px;
+}
+
+/* line 100, ../sass/_partials/_sections.scss */
+.footnotes-section {
+  opacity: 0.45;
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  text-transform: uppercase;
+}
+/* line 108, ../sass/_partials/_sections.scss */
+.footnotes-section h5 {
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  color: #b9975b;
+  letter-spacing: 0.15em;
+  margin: 0;
 }
 
 /* line 7, ../sass/_partials/_shoe_customizer.scss */
@@ -9243,6 +9283,20 @@ body, html {
 }
 
 /* line 156, ../sass/_partials/_shoe_customizer.scss */
+.icons-menu {
+  position: absolute;
+  top: 50%;
+  left: -29px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 58px;
+}
+/* line 164, ../sass/_partials/_shoe_customizer.scss */
+.icons-menu li + li {
+  margin-top: 90px;
+}
+
+/* line 170, ../sass/_partials/_shoe_customizer.scss */
 .shoe-customizer-right-col {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9258,7 +9312,7 @@ body, html {
   position: relative;
 }
 
-/* line 165, ../sass/_partials/_shoe_customizer.scss */
+/* line 179, ../sass/_partials/_shoe_customizer.scss */
 .circular-nav {
   background-color: rgba(255, 255, 255, 0.5);
   overflow: hidden;
@@ -9269,7 +9323,7 @@ body, html {
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
 }
-/* line 174, ../sass/_partials/_shoe_customizer.scss */
+/* line 188, ../sass/_partials/_shoe_customizer.scss */
 .circular-nav .circular-nav-area {
   cursor: pointer;
   position: absolute;
@@ -9286,16 +9340,16 @@ body, html {
   -webkit-transition: border .3s ease;
   transition: border .3s ease;
 }
-/* line 188, ../sass/_partials/_shoe_customizer.scss */
+/* line 202, ../sass/_partials/_shoe_customizer.scss */
 .circular-nav .circular-nav-area:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
-/* line 191, ../sass/_partials/_shoe_customizer.scss */
+/* line 205, ../sass/_partials/_shoe_customizer.scss */
 .circular-nav .circular-nav-area:hover::after {
   display: block;
 }
-/* line 196, ../sass/_partials/_shoe_customizer.scss */
+/* line 210, ../sass/_partials/_shoe_customizer.scss */
 .circular-nav .circular-nav-area::after {
   content: "";
   display: none;
@@ -9308,37 +9362,37 @@ body, html {
   width: 30px;
   height: 30px;
 }
-/* line 210, ../sass/_partials/_shoe_customizer.scss */
+/* line 224, ../sass/_partials/_shoe_customizer.scss */
 .circular-nav .circular-nav-area.circular-nav-area-1 {
   -webkit-transform: rotate(0deg) skew(30deg);
           transform: rotate(0deg) skew(30deg);
 }
-/* line 210, ../sass/_partials/_shoe_customizer.scss */
+/* line 224, ../sass/_partials/_shoe_customizer.scss */
 .circular-nav .circular-nav-area.circular-nav-area-2 {
   -webkit-transform: rotate(60deg) skew(30deg);
           transform: rotate(60deg) skew(30deg);
 }
-/* line 210, ../sass/_partials/_shoe_customizer.scss */
+/* line 224, ../sass/_partials/_shoe_customizer.scss */
 .circular-nav .circular-nav-area.circular-nav-area-3 {
   -webkit-transform: rotate(120deg) skew(30deg);
           transform: rotate(120deg) skew(30deg);
 }
-/* line 210, ../sass/_partials/_shoe_customizer.scss */
+/* line 224, ../sass/_partials/_shoe_customizer.scss */
 .circular-nav .circular-nav-area.circular-nav-area-4 {
   -webkit-transform: rotate(180deg) skew(30deg);
           transform: rotate(180deg) skew(30deg);
 }
-/* line 210, ../sass/_partials/_shoe_customizer.scss */
+/* line 224, ../sass/_partials/_shoe_customizer.scss */
 .circular-nav .circular-nav-area.circular-nav-area-5 {
   -webkit-transform: rotate(240deg) skew(30deg);
           transform: rotate(240deg) skew(30deg);
 }
-/* line 210, ../sass/_partials/_shoe_customizer.scss */
+/* line 224, ../sass/_partials/_shoe_customizer.scss */
 .circular-nav .circular-nav-area.circular-nav-area-6 {
   -webkit-transform: rotate(300deg) skew(30deg);
           transform: rotate(300deg) skew(30deg);
 }
-/* line 215, ../sass/_partials/_shoe_customizer.scss */
+/* line 229, ../sass/_partials/_shoe_customizer.scss */
 .circular-nav .circular-nav-selector {
   background-color: #232323;
   border-radius: 50%;
@@ -9439,24 +9493,12 @@ body, html {
 }
 
 /* line 1, ../sass/_partials/_typography.scss */
-h1 {
-  font-size: 60px;
-  font-weight: 700;
-  color: white;
-}
-
-/* line 7, ../sass/_partials/_typography.scss */
-h3 {
-  font-size: 24px;
-}
-
-/* line 11, ../sass/_partials/_typography.scss */
 small {
   font-size: 14px;
   opacity: 0.4;
 }
 
-/* line 16, ../sass/_partials/_typography.scss */
+/* line 6, ../sass/_partials/_typography.scss */
 .font-serif, .btn, .final-shoe-info .final-shoe-info-row .final-shoe-info-label, .final-shoe-info .final-shoe-info-row .final-shoe-info-text, input[type="radio"] + label {
   font-family: 'Arapey', serif;
   letter-spacing: 1px;
