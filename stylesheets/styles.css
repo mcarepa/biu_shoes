@@ -8925,7 +8925,7 @@ button.close {
 /* line 58, ../sass/_partials/_forms.scss */
 form .form-control {
   font-family: "Arapey", Georgia, "Times New Roman", Times, serif;
-  font-size: 20px;
+  font-size: 24px;
   height: 40px;
   padding: 0;
   outline: none;
@@ -9011,7 +9011,7 @@ body.landing-page .logo {
 /* line 1, ../sass/_partials/_main.scss */
 body, html {
   font-weight: 300;
-  font-size: 20px;
+  font-size: 24px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
@@ -9548,7 +9548,7 @@ body.darker-pages {
   -webkit-transform: rotate(-90deg) translate(0, 100%);
           transform: rotate(-90deg) translate(0, 100%);
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 18px;
   right: -17px;
   text-align: center;
   width: 200px;
