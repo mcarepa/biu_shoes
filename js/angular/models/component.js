@@ -1,28 +1,34 @@
-var Component = function () {
-  function Component(name, perspectives, actualColor, availableColors) {
-    this.name = name;
-    this.perspectives = perspectives;
-    this.actualColor = actualColor;
-    this.availableColors = availableColors;
-    this.svgPaths = [];
+(function(){
+  "use strict";
 
-    this.updateColor = function (color) {
-      this.actualColor = color;
-    };
+  var Component = function () {
+    function Component(name, perspectives, actualColor, availableColors, actualMaterial, availableMaterials) {
+      this.name = name;
+      this.perspectives = perspectives;
+      this.actualColor = actualColor;
+      this.availableColors = availableColors;
+      this.actualMaterial = actualMaterial;
+      this.availableMaterials = availableMaterials;
+      this.svgPaths = [];
 
-    this.buildViewSvgPath = function (shoeModel, compName, viewName) {
-      var svgObj = {
-        viewName: viewName,
-        path: 'images/shoes/' + shoeModel + '/' + viewName + '/components/' + compName + '.svg'
+      this.updateColor = function (color) {
+        this.actualColor = color;
       };
 
-      this.svgPaths.push(svgObj);
-    };
-  }
+      this.buildViewSvgPath = function (shoeModel, compName, viewName) {
+        var svgObj = {
+          viewName: viewName,
+          path: 'images/shoes/' + shoeModel + '/' + viewName + '/components/' + compName + '.svg'
+        };
 
-  return Component;
-};
+        this.svgPaths.push(svgObj);
+      };
+    }
 
-appModule
-  .factory('Component', [Component]);
+    return Component;
+  };
+
+  appModule
+    .factory('Component', [Component]);
+})();
 

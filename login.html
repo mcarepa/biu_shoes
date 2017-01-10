@@ -16,36 +16,42 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 
-<body class="landing-page">
-  <a class="logo">
+<body class="darker-pages">
+  <a href="index.html" class="logo">
     <img class="logo-img" src="images/logo.svg" alt="logo">
   </a>
 
-  <div class="section landing-section">
+  <div class="section">
     <div class="section-inner container">
-      <div class="main-text-section">
-        <h1>You idealize, customize<br>and we take care for you.</h1>
-        <h3>Handmade in Portugal</h3>
+      <div class="section-inner-main">
+        <form class="main-form">
+          <div class="form-group">
+            <input class="form-control" type="email" name="email" placeholder="Email Address" autocomplete="false" />
+            <input class="form-control" type="password" name="password" placeholder="Password" autocomplete="false"/>
+          </div>
+
+          <input type="submit" class="btn btn-primary" value="Log in"/>
+        </form>
       </div>
 
       <div class="footnotes-section">
-        <h5>Account & Shipping ></h5>
+        <h5>Enter ></h5>
       </div>
 
       <div class="actions-section">
-        <ul class="icons-menu">
-          <li>
-            <a href="login.html"><img src="images/icons/icon_user.png"/></a>
-          </li>
-          <li>
-            <a href="#"><img src="images/icons/icon_contact.png"/></a>
-          </li>
+        <ul class="vertical-menu-container">
+          <li class="vertical-menu-item"><a href="#">Login</a></li>
+          <li class="vertical-menu-item"><a href="create_account.html">Create Account</a></li>
         </ul>
       </div>
     </div>
   </div>
 
-  <div class="sidebar-main-nav-wrapper"></div>
+  <div class="sidebar-main-nav-wrapper">
+    <ul class="sidebar-main-nav">
+      <li>Account</li>
+    </ul>
+  </div>
 
   <script type="text/javascript" src="js/jquery.svg.es5.min.js"></script>
   <script type="text/javascript" src="js/vendors/jquery.easings.min.js"></script>

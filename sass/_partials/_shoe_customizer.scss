@@ -153,6 +153,20 @@ $margin-size: calc(100% - (#{$perspectives-nav-width + $gallery-width + $circula
   border-left: 1px dashed $text-color;
 }
 
+.icons-menu {
+  position: absolute;
+  top: 50%;
+  left: -29px;
+  transform: translateY(-50%);
+  width: 58px;
+
+  li {
+    & + li {
+      margin-top: 90px;
+    }
+  }
+}
+
 .shoe-customizer-right-col {
   display: flex;
   justify-content: center;

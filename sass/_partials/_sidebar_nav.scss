@@ -64,12 +64,12 @@
         right: -11px;
       }
 
-      & > .sidebar-main-dot-label {
+      & > .sidebar-main-nav-label {
         opacity: 1;
       }
     }
 
-    .sidebar-main-dot-label {
+    .sidebar-main-nav-label {
       color: white;
       pointer-events: none;
       display: block;
@@ -78,10 +78,14 @@
       top: 50%;
       transform: rotate(-90deg) translate(0, 100%);
       text-transform: uppercase;
-      font-size: 20px;
+      font-size: $font-size-h4;
       right: -17px;
       text-align: center;
       width: 200px;
+
+      &.static {
+        opacity: 1;
+      }
     }
   }
 }

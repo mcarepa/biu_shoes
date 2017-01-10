@@ -5,7 +5,7 @@ var fullpage = function($timeout) {
       $timeout (function() {
         $(elm).fullpage({
           menu: "#full-page-menu",
-          anchors:['landingPage', 'modelPage', 'colorPage', 'sizePage', 'myShoePage']
+          anchors:['modelPage', 'colorPage', 'sizePage', 'myShoePage']
         });
       });
     }

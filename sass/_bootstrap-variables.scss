@@ -16,11 +16,11 @@
 // $gray-lighter:           lighten($gray-base, 93.5%) // #eee
 $brand-black:               #141414;
 
-// $brand-primary:         darken(#428bca, 6.5%) // #337ab7
+$brand-primary:            #b9975b;
 // $brand-success:         #5cb85c
 // $brand-info:            #5bc0de
 // $brand-warning:         #f0ad4e
-// $brand-danger:          #d9534f
+$brand-danger:             #FF4E00;
 
 //== Scaffolding
 //
@@ -29,34 +29,34 @@ $brand-black:               #141414;
 //** Background color for `<body>`.
 $body-bg:                 #232323;
 //** Global text color on `<body>`.
-$text-color:              #b9975b;
+$text-color:              $brand-primary;
 
 //** Global textual link color.
-// $link-color:            $brand-primary
+$link-color:              $brand-primary;
 //** Link hover color set via `darken()` function.
-// $link-hover-color:      darken($link-color, 15%)
+$link-hover-color:        white;
 //** Link hover decoration.
-// $link-hover-decoration: underline
+$link-hover-decoration:   none;
 
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:     'Lato', 'Helvetica Neue', 'Helvetica', sans-serif;
-// $font-family-serif:       Georgia, "Times New Roman", Times, serif
+$font-family-sans-serif:     'Roboto', 'Helvetica Neue', 'Helvetica', sans-serif;
+$font-family-serif:          'Arapey', Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 // $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace
-// $font-family-base:        $font-family-sans-serif
+$font-family-base:           $font-family-serif;
 
 // $font-size-base:          14px
 // $font-size-large:         ceil(($font-size-base * 1.25)) // ~18px
 // $font-size-small:         ceil(($font-size-base * 0.85)) // ~12px
 
-// $font-size-h1:            floor(($font-size-base * 2.6)) // ~36px
-// $font-size-h2:            floor(($font-size-base * 2.15)) // ~30px
-// $font-size-h3:            ceil(($font-size-base * 1.7)) // ~24px
-// $font-size-h4:            ceil(($font-size-base * 1.25)) // ~18px
-// $font-size-h5:            $font-size-base
+$font-size-h1:               50px;
+$font-size-h2:               25px;
+$font-size-h2:               20px;
+$font-size-h4:               18px;
+$font-size-h5:               15px;
 // $font-size-h6:            ceil(($font-size-base * 0.85)) // ~12px
 
 //** Unit-less `line-height` for use in components like buttons.
@@ -65,10 +65,10 @@ $font-family-sans-serif:     'Lato', 'Helvetica Neue', 'Helvetica', sans-serif;
 // $line-height-computed:    floor(($font-size-base * $line-height-base)) // ~20px
 
 //** By default, this inherits from the `<body>`.
-// $headings-font-family:    inherit
-// $headings-font-weight:    500
-// $headings-line-height:    1.1
-// $headings-color:          inherit
+$headings-font-family:      'Roboto', 'Lato', sans-serif;
+$headings-font-weight:       700;
+$headings-line-height:       1.2;
+$headings-color:             white;
 
 //== Iconography
 //
@@ -144,13 +144,13 @@ $font-family-sans-serif:     'Lato', 'Helvetica Neue', 'Helvetica', sans-serif;
 
 // $btn-font-weight:                normal
 
-// $btn-default-color:              #333
-// $btn-default-bg:                 #fff
-// $btn-default-border:             #ccc
+$btn-default-color:                 $text-color;
+$btn-default-bg:                    transparent;
+$btn-default-border:                $text-color;
 
-$btn-primary-color:                 $text-color;
+$btn-primary-color:                 $brand-primary;
 $btn-primary-bg:                    transparent;
-$btn-primary-border:                $text-color;
+$btn-primary-border:                $brand-primary;
 
 // $btn-success-color:              #fff
 // $btn-success-bg:                 $brand-success
@@ -180,14 +180,14 @@ $btn-primary-border:                $text-color;
 //##
 
 //** `<input>` background color
-// $input-bg:                       #fff
+$input-bg:                          transparent;
 //** `<input disabled>` background color
 // $input-bg-disabled:              $gray-lighter
 
 //** Text color for `<input>`s
-// $input-color:                    $gray
+$input-color:                       white;
 //** `<input>` border color
-// $input-border:                   #ccc
+$input-border:                      transparent;
 
 // TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
 //** Default `.form-control` border radius
@@ -199,10 +199,10 @@ $btn-primary-border:                $text-color;
 // $input-border-radius-small:      $border-radius-small
 
 //** Border color for inputs on focus
-// $input-border-focus:             #66afe9
+$input-border-focus:                transparent;
 
 //** Placeholder text color
-// $input-color-placeholder:        #999
+$input-color-placeholder:           white;
 
 //** Default `.form-control` height
 // $input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + 2)
