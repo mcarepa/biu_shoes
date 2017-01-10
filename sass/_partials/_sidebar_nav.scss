@@ -64,12 +64,12 @@
         right: -11px;
       }
 
-      & > .sidebar-main-dot-label {
+      & > .sidebar-main-nav-label {
         opacity: 1;
       }
     }
 
-    .sidebar-main-dot-label {
+    .sidebar-main-nav-label {
       color: white;
       pointer-events: none;
       display: block;
@@ -82,6 +82,10 @@
       right: -17px;
       text-align: center;
       width: 200px;
+
+      &.static {
+        opacity: 1;
+      }
     }
   }
 }

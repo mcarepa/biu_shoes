@@ -1,11 +1,9 @@
 .btn {
-  @extend .font-serif;
   border-radius: 1px;
   font-size: 18px;
   text-transform: uppercase;
-  letter-spacing: 4px;
-  padding: 22px;
-  min-width: 186px;
+  letter-spacing: 3px;
+  min-width: 234px;
 
   &:hover {
     cursor: pointer;

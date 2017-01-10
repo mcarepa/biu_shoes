@@ -54,6 +54,32 @@
   }
 }
 
+form {
+  .form-control {
+    font-family: $font-family-serif;
+    font-size: 20px;
+    height: 40px;
+    padding: 0;
+    outline: none;
+    border: none;
+    border-radius: 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+form.main-form {
+  .form-group:first-child {
+    min-height: 290px;
+  }
+}
+
+input:-webkit-autofill,
+input:hover:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px $brand-black inset;
+  -webkit-text-fill-color: white!important;
+}
+
 input[type="radio"] {
   position: absolute;
   left: -9999px;
@@ -61,7 +87,6 @@ input[type="radio"] {
   text-indent: -9999px;
 
   & + label {
-    @extend .font-serif;
     color: white;
     cursor: pointer;
     margin: 0;

@@ -1,4 +1,4 @@
-var appModule = angular.module('ShoeCustomizer', []);
+var appModule = angular.module('ShoeCustomizer', ['ngRoute']);
 
 var MainController = function($scope, $rootScope, Shoe) {
   // 1º - Initialize shoes
@@ -43,7 +43,6 @@ var MainController = function($scope, $rootScope, Shoe) {
     'leather', defaultAvailableMaterials
   );
 
-
   /////////////////////////////
   //// Catarina Components ////
   /////////////////////////////
@@ -73,7 +72,6 @@ var MainController = function($scope, $rootScope, Shoe) {
     '#ff1493', defaultAvailableColors,
     'leather', defaultAvailableMaterials
   );
-
 
   ///////////////////////////////
   //// Margarida Components /////
